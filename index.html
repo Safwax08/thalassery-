@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thalassery  | Luxury Dining Experience</title>
+    <meta name="description" content="Experience world-class culinary excellence at thalassery  Hotel. Explore our exquisite menu of gourmet burgers, truffle pasta, fresh sushi, and decadent desserts.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">thalassery </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Our Menu</a></li>
+                <li><a href="#reservations" class="btn-primary">Reservations</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content fade-in-up">
+            <h1>A Taste of Luxury</h1>
+            <p>Indulge in an unforgettable dining experience where culinary art meets modern sophistication.</p>
+            <a href="#menu" class="btn-primary btn-large">Explore Our Menu</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+
+    <main>
+        <section id="menu" class="menu-section">
+            <div class="section-header reveal">
+                <h2>Our Exquisite Menu</h2>
+                <p>Explore our carefully curated selections from dawn till dusk.</p>
+            </div>
+
+            <!-- Breakfast Section -->
+            <div class="menu-category reveal">
+                <h3 class="category-title">Breakfast</h3>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/breakfast.png" alt="Gourmet Breakfast" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Artisan Avocado Toast</h3>
+                            <p>Smashed avocado, poached organic eggs, and micro-greens on sourdough.</p>
+                            <span class="price">$24</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/breakfast.png" alt="Pancakes" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Truffle Eggs Benedict</h3>
+                            <p>Classic benedict elevated with black truffle shavings and rich hollandaise.</p>
+                            <span class="price">$28</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Dinner Section -->
+            <div class="menu-category reveal" style="margin-top: var(--spacing-xl);">
+                <h3 class="category-title">Dinner</h3>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/burger.png" alt="Gourmet Burger" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>The Elysian Burger</h3>
+                            <p>Artisan brioche, premium wagyu beef, aged cheddar, and our signature truffle aioli.</p>
+                            <span class="price">$32</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/pasta.png" alt="Creamy Truffle Pasta" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Wild Mushroom Truffle Pasta</h3>
+                            <p>Hand-crafted fettuccine tossed in a rich, creamy sauce with fresh truffles and parmesan.</p>
+                            <span class="price">$45</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/sushi.png" alt="Colorful Sushi Platter" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Ocean's Bounty Sushi</h3>
+                            <p>A vibrant selection of the freshest sashimi and expertly crafted maki rolls.</p>
+                            <span class="price">$65</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Ice Creams Section -->
+            <div class="menu-category reveal" style="margin-top: var(--spacing-xl);">
+                <h3 class="category-title">Ice Creams & Sweets</h3>
+                <div class="menu-grid">
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/dessert.png" alt="Gelato" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Gelato Trio Flight</h3>
+                            <p>Pistachio, dark chocolate, and Tahitian vanilla bean authentic gelato.</p>
+                            <span class="price">$16</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/dessert.png" alt="Midnight Lava Cake" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Midnight Lava Cake</h3>
+                            <p>Decadent dark chocolate cake with a molten center, paired with vanilla bean gelato.</p>
+                            <span class="price">$18</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Booking Section -->
+        <section id="reservations" class="booking-section reveal">
+            <div class="booking-container">
+                <div class="booking-text">
+                    <h2>Seating Reservations</h2>
+                    <p>Select an available table or scan the QR code to book your spot instantly.</p>
+                    
+                    <div class="seating-chart" id="seatingChart">
+                        <div class="table free" data-id="1">1</div>
+                        <div class="table occupied" data-id="2">2</div>
+                        <div class="table free" data-id="3">3</div>
+                        <div class="table occupied" data-id="4">4</div>
+                        <div class="table free" data-id="5">5</div>
+                        <div class="table free" data-id="6">6</div>
+                        <div class="table occupied" data-id="7">7</div>
+                    </div>
+
+                    <div class="booking-status" id="bookingStatus">
+                        <span class="status-dot free"></span> Available 
+                        <span class="status-dot occupied"></span> Booked
+                    </div>
+                </div>
+                <div class="qr-code-wrapper">
+                    <img src="assets/book_qr.png" alt="Book Table QR Code" class="qr-image">
+                    <div class="scanner-line"></div>
+                </div>
+            </div>
+            <div id="bookingToast" class="toast">Table successfully booked!</div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container stacked">
+            <div class="contact-box">
+                <h3>Contact Us</h3>
+                <ul class="contact-details">
+                    <li>📍 123 Luxury Avenue, Metropolis, NY 10001</li>
+                    <li>✉️ dining@elysithalasseryhotel.com</li>
+                    <li>📞 +1 (555) 123-4567</li>
+                </ul>
+            </div>
+            <div class="brand-section">
+                <div class="footer-brand">thalassery </div>
+                <p>Culinary excellence and unforgettable dining experiences.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 thalassery  Hotel Dining. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
