@@ -69,9 +69,10 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: 1rem var(--spacing-xl);
   max-width: 1400px;
   margin: 0 auto;
+  transition: var(--transition-smooth);
 }
 
 #navbar {
@@ -81,16 +82,32 @@ ul {
   width: 100%;
   z-index: 1000;
   transition: var(--transition-smooth);
-  background: rgba(10, 12, 16, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(10, 12, 16, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #navbar.scrolled {
-  background: rgba(10, 12, 16, 0.85);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  padding: 5px 0;
+  background: rgba(10, 12, 16, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  border-bottom-color: rgba(212, 175, 55, 0.15);
+}
+
+#navbar.scrolled .nav-container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: var(--transition-smooth);
+  display: block;
+}
+
+#navbar.scrolled .nav-logo-img {
+  height: 42px;
 }
 
 .logo {
@@ -808,18 +825,19 @@ footer {
 
 .contact-details li {
   color: var(--text-primary);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 15px;
-  padding: 12px 24px;
+  padding: 14px 20px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   width: 100%;
-  max-width: 450px;
+  max-width: 480px;
   transition: var(--transition-smooth);
   border: 1px solid transparent;
+  line-height: 1.5;
 }
 
 .contact-details li:hover {
@@ -904,7 +922,20 @@ footer {
 
 @media screen and (max-width: 768px) {
   .nav-container {
-    padding: var(--spacing-md) var(--spacing-md);
+    padding: 0.8rem 1rem;
+  }
+  
+  #navbar.scrolled .nav-container {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .nav-logo-img {
+    height: 42px;
+  }
+  
+  #navbar.scrolled .nav-logo-img {
+    height: 36px;
   }
   
   .hamburger {
@@ -924,6 +955,7 @@ footer {
     align-items: center;
     transition: 0.5s ease;
     z-index: 1000;
+    gap: 15px;
   }
 
   .nav-links.active {
@@ -931,7 +963,7 @@ footer {
   }
 
   .nav-links li {
-    margin: 20px 0;
+    margin: 5px 0;
   }
   
   .section-header h2 {
@@ -952,8 +984,9 @@ footer {
   }
   
   .contact-details li {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    text-align: left;
+    padding: 12px 15px;
   }
 
   .booking-section {
