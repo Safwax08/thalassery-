@@ -980,6 +980,12 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
+
+  .manager-card {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 25px !important;
+  }
 }
 
 /* Hamburger Animation */
