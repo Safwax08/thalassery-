@@ -955,6 +955,31 @@ footer {
     flex-direction: column;
     text-align: center;
   }
+
+  .booking-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .booking-container {
+    padding: var(--spacing-sm);
+  }
+
+  .order-form {
+    padding: var(--spacing-md);
+  }
+
+  .dynamic-order-list div {
+    flex-direction: column;
+  }
+
+  .dynamic-order-list input[type="number"] {
+    width: 100% !important;
+  }
+
+  .delivery-partners div {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 
 /* Hamburger Animation */

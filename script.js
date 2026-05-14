@@ -137,7 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Form Submit
-        orderForm.addEventListener('submit', (e) => {
+        // Form Submit
+        orderForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             if (orderItems.length === 0) {
@@ -146,21 +147,76 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            const submitBtn = document.getElementById('submitOrderBtn');
+            const originalBtnText = submitBtn ? submitBtn.innerText : "Place Order";
+            if (submitBtn) {
+                submitBtn.innerText = "Sending Order...";
+                submitBtn.disabled = true;
+            }
+
             const name = document.getElementById('orderName').value;
             const phone = document.getElementById('orderPhone').value;
             const address = document.getElementById('orderAddress').value;
             const details = orderDetailsHidden.value;
 
-            const subject = encodeURIComponent(`New Direct Order from ${name}`);
-            const body = encodeURIComponent(`You have received a new order!\n\nCustomer Details:\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nOrder Details:\n${details}\n\nPlease contact the customer to confirm the order.`);
+            // Web3Forms API Access Key
+            const accessKey = "b31d7fb9-5e47-41db-89de-fab7e3fe8ace";
 
-            window.location.href = `mailto:dining@elysithalasseryhotel.com?subject=${subject}&body=${body}`;
-            
-            // Optionally clear the form
-            orderForm.reset();
-            orderItems = [];
-            renderAddedItems();
-            alert("Your order request has been opened in your email client. Please send the email to complete your order!");
+            if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
+                alert("Note: Automation key not configured yet. Opening email app to place your order...");
+                // Fallback to mailto link
+                const subject = encodeURIComponent(`New Direct Order from ${name}`);
+                const body = encodeURIComponent(`You have received a new order!\n\nCustomer Details:\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nOrder Details:\n${details}\n\nPlease contact the customer to confirm the order.`);
+                window.location.href = `mailto:dining@elysithalasseryhotel.com?subject=${subject}&body=${body}`;
+                
+                if (submitBtn) {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+                
+                orderForm.reset();
+                orderItems = [];
+                renderAddedItems();
+                return;
+            }
+
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        access_key: accessKey,
+                        subject: `New Direct Order from ${name}`,
+                        from_name: "Thalassery Orders",
+                        name: name,
+                        email: "orders@thalasserykitchen.com",
+                        phone: phone,
+                        address: address,
+                        message: `NEW CUSTOMER ORDER\n\nItems Ordered:\n${details}\nDelivery Address:\n${address}\n\nContact Phone:\n${phone}`
+                    })
+                });
+
+                const result = await response.json();
+                if (response.status === 200) {
+                    alert("Order placed successfully! We have received your order directly.");
+                    orderForm.reset();
+                    orderItems = [];
+                    renderAddedItems();
+                } else {
+                    alert("Failed to send order: " + result.message);
+                }
+            } catch (error) {
+                console.error("Order API Error:", error);
+                alert("An error occurred while sending your order. Please call us directly.");
+            } finally {
+                if (submitBtn) {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                }
+            }
         });
     }
 
