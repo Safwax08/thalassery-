@@ -68,6 +68,102 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Direct Order Form Logic
+    const orderForm = document.getElementById('orderForm');
+    if (orderForm) {
+        // Populate Datalist
+        const menuItemsList = document.getElementById('menuItemsList');
+        const itemSearch = document.getElementById('itemSearch');
+        const itemQty = document.getElementById('itemQty');
+        const addItemBtn = document.getElementById('addItemBtn');
+        const addedItemsUI = document.getElementById('addedItemsUI');
+        const orderDetailsHidden = document.getElementById('orderDetails');
+        let orderItems = [];
+
+        // Extract all menu items from DOM
+        const menuElements = document.querySelectorAll('.menu-item-name, .card-content h3');
+        const uniqueItems = new Set();
+        menuElements.forEach(el => uniqueItems.add(el.textContent.trim()));
+        
+        uniqueItems.forEach(item => {
+            const option = document.createElement('option');
+            option.value = item;
+            menuItemsList.appendChild(option);
+        });
+
+        // Add Item Button
+        addItemBtn.addEventListener('click', () => {
+            const itemName = itemSearch.value.trim();
+            const qty = parseInt(itemQty.value) || 1;
+            
+            if (itemName) {
+                orderItems.push({ name: itemName, qty: qty });
+                renderAddedItems();
+                itemSearch.value = '';
+                itemQty.value = 1;
+                itemSearch.focus();
+            }
+        });
+
+        // Optional: Add Item on Enter Key inside Search Input
+        itemSearch.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault(); // Prevent form submission
+                addItemBtn.click();
+            }
+        });
+
+        function renderAddedItems() {
+            addedItemsUI.innerHTML = '';
+            let orderText = '';
+            
+            orderItems.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span>${item.qty}x ${item.name}</span> <button type="button" class="remove-item-btn" data-index="${index}">×</button>`;
+                addedItemsUI.appendChild(li);
+                orderText += `- ${item.qty}x ${item.name}\n`;
+            });
+            
+            orderDetailsHidden.value = orderText;
+
+            // Handle Remove Buttons
+            document.querySelectorAll('.remove-item-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = parseInt(e.target.getAttribute('data-index'));
+                    orderItems.splice(idx, 1);
+                    renderAddedItems();
+                });
+            });
+        }
+
+        // Form Submit
+        orderForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (orderItems.length === 0) {
+                alert("Please add at least one item to your order.");
+                itemSearch.focus();
+                return;
+            }
+
+            const name = document.getElementById('orderName').value;
+            const phone = document.getElementById('orderPhone').value;
+            const address = document.getElementById('orderAddress').value;
+            const details = orderDetailsHidden.value;
+
+            const subject = encodeURIComponent(`New Direct Order from ${name}`);
+            const body = encodeURIComponent(`You have received a new order!\n\nCustomer Details:\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nOrder Details:\n${details}\n\nPlease contact the customer to confirm the order.`);
+
+            window.location.href = `mailto:dining@elysithalasseryhotel.com?subject=${subject}&body=${body}`;
+            
+            // Optionally clear the form
+            orderForm.reset();
+            orderItems = [];
+            renderAddedItems();
+            alert("Your order request has been opened in your email client. Please send the email to complete your order!");
+        });
+    }
+
     // Google Places API integration is initialized via callback
 });
 

@@ -16,7 +16,10 @@
 <body>
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">thalassery <span class="halal-badge">حلال Halal</span></div>
+            <a href="#home" class="logo" style="display: flex; align-items: center; gap: 15px; text-decoration: none;">
+                <img src="assets/logo.jpg" alt="Thalassery Kitchen" style="height: 55px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+                <span class="halal-badge" style="margin: 0;">حلال Halal</span>
+            </a>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -25,6 +28,14 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Our Menu</a></li>
+                <li><a href="#order">Order Direct</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://www.swiggy.com/" target="_blank" style="display: flex; align-items: center; justify-content: center; background: #fff; padding: 0.3rem 1rem; border-radius: 30px; transition: all 0.3s ease; color: #fc8019; font-weight: 700; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+                    <img src="https://www.google.com/s2/favicons?domain=swiggy.com&sz=64" alt="Swiggy Logo" style="height: 18px;"> Swiggy
+                </a></li>
+                <li><a href="https://www.zomato.com/" target="_blank" style="display: flex; align-items: center; justify-content: center; background: #cb202d; padding: 0.3rem 1rem; border-radius: 30px; transition: all 0.3s ease; color: #fff; font-weight: 700; gap: 8px;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='translateY(0)';">
+                    <img src="https://www.google.com/s2/favicons?domain=zomato.com&sz=64" alt="Zomato Logo" style="height: 18px; border-radius: 4px;"> Zomato
+                </a></li>
             </ul>
         </div>
     </nav>
@@ -51,7 +62,9 @@
 
             <!-- Signature Dishes with Images -->
             <div class="menu-category reveal" style="margin-bottom: var(--spacing-xl);">
-                <h3 class="category-title" style="color: var(--accent-gold); font-family: var(--font-serif); border-bottom: 1px dashed rgba(212, 175, 55, 0.4); padding-bottom: 0.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">Signature Dishes</h3>
+                <h3 class="category-title"
+                    style="color: var(--accent-gold); font-family: var(--font-serif); border-bottom: 1px dashed rgba(212, 175, 55, 0.4); padding-bottom: 0.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">
+                    Signature Dishes</h3>
                 <div class="menu-grid">
                     <article class="menu-card">
                         <div class="card-image-wrapper">
@@ -59,7 +72,8 @@
                         </div>
                         <div class="card-content">
                             <h3>Thalassery Dum Biriyani</h3>
-                            <p>Our authentic, world-famous dum biriyani served with tender meat, rich spices, and fragrant rice.</p>
+                            <p>Our authentic, world-famous dum biriyani served with tender meat, rich spices, and
+                                fragrant rice.</p>
                             <span class="price">200</span>
                         </div>
                     </article>
@@ -79,7 +93,8 @@
                         </div>
                         <div class="card-content">
                             <h3>Chicken 65</h3>
-                            <p>A classic favorite. Crispy, spicy, and perfectly marinated chicken pieces tossed with fresh curry leaves.</p>
+                            <p>A classic favorite. Crispy, spicy, and perfectly marinated chicken pieces tossed with
+                                fresh curry leaves.</p>
                             <span class="price">150</span>
                         </div>
                     </article>
@@ -99,7 +114,8 @@
                         </div>
                         <div class="card-content">
                             <h3>Mutton Rogan Gosh</h3>
-                            <p>A luxurious, aromatic Kashmiri curry featuring slow-cooked, succulent pieces of mutton.</p>
+                            <p>A luxurious, aromatic Kashmiri curry featuring slow-cooked, succulent pieces of mutton.
+                            </p>
                             <span class="price">200</span>
                         </div>
                     </article>
@@ -109,7 +125,8 @@
                         </div>
                         <div class="card-content">
                             <h3>Paneer Chilly</h3>
-                            <p>Crispy paneer cubes tossed in a sweet, spicy, and tangy soy-based sauce with fresh peppers.</p>
+                            <p>Crispy paneer cubes tossed in a sweet, spicy, and tangy soy-based sauce with fresh
+                                peppers.</p>
                             <span class="price">160</span>
                         </div>
                     </article>
@@ -655,17 +672,63 @@
             </div>
         </section>
 
+        <!-- Direct Order Section -->
+        <section id="order" class="booking-section reveal">
+            <div class="booking-container">
+                <div class="booking-text">
+                    <h2>Direct Order</h2>
+                    <p>Order directly from us. Fill out the details below and we will receive your order via email!</p>
+                </div>
+                <form id="orderForm" class="order-form">
+                    <input type="text" id="orderName" placeholder="Your Name" required>
+                    <input type="tel" id="orderPhone" placeholder="Phone Number" required>
+                    <textarea id="orderAddress" placeholder="Delivery Address" rows="2" required></textarea>
+                    <div class="dynamic-order-list">
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="itemSearch" list="menuItemsList" placeholder="Search and select menu item..." style="flex: 1;" autocomplete="off">
+                            <datalist id="menuItemsList"></datalist>
+                            <input type="number" id="itemQty" value="1" min="1" style="width: 80px;" placeholder="Qty">
+                            <button type="button" id="addItemBtn" class="btn-primary" style="padding: 0 1rem; border-radius: 12px; border: none;">Add</button>
+                        </div>
+                        <ul id="addedItemsUI" class="added-items-list"></ul>
+                        <textarea id="orderDetails" style="display: none;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large" style="width: 100%; border: none;">Send Order
+                        via Email</button>
+                </form>
+
+                <div class="delivery-partners" style="margin-top: 2.5rem; width: 100%; max-width: 600px; text-align: center;">
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem; position: relative; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+                        <span style="background: rgba(255,255,255,0.1); height: 1px; flex: 1; margin-right: 15px;"></span>
+                        Or order via partners
+                        <span style="background: rgba(255,255,255,0.1); height: 1px; flex: 1; margin-left: 15px;"></span>
+                    </p>
+                    <div style="display: flex; gap: 20px; justify-content: center;">
+                        <a href="https://www.swiggy.com/" target="_blank" class="delivery-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #fc8019; padding: 12px 24px; border-radius: 12px; transition: all 0.3s ease; flex: 1; color: white; text-decoration: none; font-weight: 700; font-size: 1.1rem;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 20px rgba(252,128,25,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <img src="https://www.google.com/s2/favicons?domain=swiggy.com&sz=64" alt="Swiggy" style="height: 24px; border-radius: 4px;"> Order on Swiggy
+                        </a>
+                        <a href="https://www.zomato.com/" target="_blank" class="delivery-btn" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #cb202d; padding: 12px 24px; border-radius: 12px; transition: all 0.3s ease; flex: 1; color: white; text-decoration: none; font-weight: 700; font-size: 1.1rem;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 20px rgba(203,32,45,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            <img src="https://www.google.com/s2/favicons?domain=zomato.com&sz=64" alt="Zomato" style="height: 24px; border-radius: 4px;"> Order on Zomato
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Google Reviews Section -->
         <section id="reviews" class="feedback-section reveal">
             <div class="section-header">
                 <h2>Customer Reviews</h2>
-                <div id="googleRatingContainer" style="font-size: 1.5rem; color: var(--accent-gold); margin-top: 10px; margin-bottom: 5px; letter-spacing: 2px;">
+                <div id="googleRatingContainer"
+                    style="font-size: 1.5rem; color: var(--accent-gold); margin-top: 10px; margin-bottom: 5px; letter-spacing: 2px;">
                     <!-- Live rating will be injected here -->
-                    <span class="loading-spinner" style="display:inline-block; font-size:1rem;">Fetching live rating...</span>
+                    <span class="loading-spinner" style="display:inline-block; font-size:1rem;">Fetching live
+                        rating...</span>
                 </div>
-                <p id="googleTotalReviews" style="color: var(--text-secondary);">Read what our guests have to say on Google Maps.</p>
+                <p id="googleTotalReviews" style="color: var(--text-secondary);">Read what our guests have to say on
+                    Google Maps.</p>
             </div>
-            
+
             <div class="reviews-grid" id="reviewsGrid">
                 <!-- Live review cards will be injected here -->
             </div>
@@ -676,19 +739,19 @@
 
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="footer-container stacked">
             <div class="contact-box">
                 <h3>Contact Us</h3>
                 <ul class="contact-details">
                     <li>📍 Badria Street, 20-20209-1, Bunder Rd, opposite Badria Masjid, Bamboo Bazar, Bunder,
                         Mangaluru, Karnataka 575001/li>
-                    <li>✉️ dining@elysithalasseryhotel.com</li>
+                    <li>✉️ mahdsafwan5@gmail.com</li>
                     <li>📞 099726 66644</li>
                 </ul>
             </div>
             <div class="brand-section">
-                <div class="footer-brand">thalassery </div>
+                <img src="assets/logo.jpg" alt="Thalassery Kitchen" style="height: 80px; border-radius: 12px; margin-bottom: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
                 <p>Culinary excellence and unforgettable dining experiences.</p>
             </div>
         </div>
@@ -698,7 +761,8 @@
     </footer>
 
     <script src="script.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2HJ8WF8R3hfBxokgWZmD0efOAJo3dMdo&libraries=places&callback=initGoogleReviews"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2HJ8WF8R3hfBxokgWZmD0efOAJo3dMdo&libraries=places&callback=initGoogleReviews"></script>
 </body>
 
 </html>

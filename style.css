@@ -675,6 +675,75 @@ ul {
 }
 
 /* ==========================================================================
+   Order Form Section
+   ========================================================================== */
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+  max-width: 600px;
+  background: rgba(10, 12, 16, 0.8);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  margin-top: var(--spacing-lg);
+}
+
+.order-form input,
+.order-form textarea {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+}
+
+.order-form input:focus,
+.order-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.added-items-list {
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.added-items-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: var(--border-radius-md);
+  color: var(--accent-gold);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.remove-item-btn {
+  background: transparent;
+  color: var(--accent-coral);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: var(--transition-smooth);
+}
+
+.remove-item-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
    Footer
    ========================================================================== */
 footer {
