@@ -347,6 +347,13 @@ ul {
   margin-top: auto;
 }
 
+.price::before {
+  content: '₹';
+  margin-right: 2px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
 .category-title {
   font-size: 2.2rem;
   color: #fff;
@@ -384,6 +391,7 @@ ul {
 .price-header {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 15px;
   font-size: 0.8rem;
   color: var(--text-secondary);
@@ -391,6 +399,14 @@ ul {
   font-weight: 600;
   margin-bottom: 0.5rem;
   padding-right: 5px;
+}
+
+.price-header::after {
+  content: '(₹)';
+  color: var(--accent-gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-left: 4px;
 }
 
 .price-header span {
