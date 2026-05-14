@@ -401,14 +401,6 @@ ul {
   padding-right: 5px;
 }
 
-.price-header::after {
-  content: '(₹)';
-  color: var(--accent-gold);
-  font-weight: 700;
-  font-size: 0.85rem;
-  margin-left: 4px;
-}
-
 .price-header span {
   min-width: 40px;
   text-align: right;
