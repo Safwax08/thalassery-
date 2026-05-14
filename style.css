@@ -16,7 +16,7 @@
   --accent-coral: #ff6b6b;
   
   /* Typography */
-  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-sans: 'Outfit', -apple-system, sans-serif;
   --font-serif: 'Playfair Display', serif;
   
   /* Spacing & Layout */
@@ -846,6 +846,18 @@ footer {
   transition: var(--transition-smooth);
   border: 1px solid transparent;
   line-height: 1.5;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.contact-text {
+  flex-grow: 1;
+  text-align: left;
 }
 
 .contact-details li:hover {
