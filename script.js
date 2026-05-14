@@ -220,6 +220,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Dynamic Restaurant Status Popup (Open/Closed check)
+    function checkRestaurantStatus() {
+        const currentHour = new Date().getHours();
+        // Open daily: 7:00 AM (hour 7) to 11:00 PM (hour 23)
+        const isOpen = currentHour >= 7 && currentHour < 23;
+        
+        const statusToast = document.createElement('div');
+        statusToast.className = 'status-popup-toast';
+        
+        const iconColor = isOpen ? '#4caf50' : '#f44336';
+        const titleText = isOpen ? 'We are Currently Open!' : 'We are Currently Closed';
+        const descText = isOpen ? 'Serving authentic culinary delights till 11:00 PM.' : 'Our business hours are from 7:00 AM to 11:00 PM.';
+        
+        statusToast.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background-color: ${iconColor}; box-shadow: 0 0 10px ${iconColor}; flex-shrink: 0; animation: pulseGlow 2s infinite;"></div>
+                <div>
+                    <div style="font-weight: 700; color: #fff; font-size: 1.05rem;">${titleText}</div>
+                    <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 2px;">${descText}</div>
+                </div>
+            </div>
+            <button type="button" class="close-status-toast" style="background: transparent; border: none; color: var(--text-secondary); font-size: 1.5rem; cursor: pointer; padding: 0 5px; line-height: 1;">&times;</button>
+        `;
+        
+        document.body.appendChild(statusToast);
+        
+        // Trigger animation after brief initial load delay
+        setTimeout(() => {
+            statusToast.classList.add('show');
+        }, 1000);
+        
+        // Close button functionality
+        const closeBtn = statusToast.querySelector('.close-status-toast');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                statusToast.classList.remove('show');
+                setTimeout(() => statusToast.remove(), 600);
+            });
+        }
+        
+        // Auto dismiss after 8 seconds
+        setTimeout(() => {
+            if (statusToast.parentElement) {
+                statusToast.classList.remove('show');
+                setTimeout(() => statusToast.remove(), 600);
+            }
+        }, 8500);
+    }
+    
+    checkRestaurantStatus();
+
     // Google Places API integration is initialized via callback
 });
 
