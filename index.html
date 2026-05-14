@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>thalassery  | Luxury Dining Experience</title>
-    <meta name="description" content="Experience world-class culinary excellence at thalassery  Hotel. Explore our exquisite menu of gourmet burgers, truffle pasta, fresh sushi, and decadent desserts.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>thalassery | Luxury Dining Experience</title>
+    <meta name="description"
+        content="Experience world-class culinary excellence at thalassery  Hotel. Explore our exquisite menu of gourmet burgers, truffle pasta, fresh sushi, and decadent desserts.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">thalassery </div>
+            <div class="logo">thalassery <span class="halal-badge">حلال Halal</span></div>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -20,12 +25,14 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Our Menu</a></li>
-                <li><a href="#reservations" class="btn-primary">Reservations</a></li>
             </ul>
         </div>
     </nav>
 
     <header id="home" class="hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="assets/thalassery .mp4" type="video/mp4">
+        </video>
         <div class="hero-content fade-in-up">
             <h1>A Taste of Luxury</h1>
             <p>Indulge in an unforgettable dining experience where culinary art meets modern sophistication.</p>
@@ -37,131 +44,636 @@
     <main>
         <section id="menu" class="menu-section">
             <div class="section-header reveal">
-                <h2>Our Exquisite Menu</h2>
+                <h2>Our Exquisite Menu <span class="halal-badge" style="font-size: 1rem; padding: 0.3rem 0.8rem;">100%
+                        حلال Halal</span></h2>
                 <p>Explore our carefully curated selections from dawn till dusk.</p>
             </div>
 
-            <!-- Breakfast Section -->
-            <div class="menu-category reveal">
-                <h3 class="category-title">Breakfast</h3>
+            <!-- Signature Dishes with Images -->
+            <div class="menu-category reveal" style="margin-bottom: var(--spacing-xl);">
+                <h3 class="category-title" style="color: var(--accent-gold); font-family: var(--font-serif); border-bottom: 1px dashed rgba(212, 175, 55, 0.4); padding-bottom: 0.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">Signature Dishes</h3>
                 <div class="menu-grid">
                     <article class="menu-card">
                         <div class="card-image-wrapper">
-                            <img src="assets/breakfast.png" alt="Gourmet Breakfast" class="card-image">
+                            <img src="assets/biriyani.png" alt="Thalassery Dum Biriyani" class="card-image">
                         </div>
                         <div class="card-content">
-                            <h3>Artisan Avocado Toast</h3>
-                            <p>Smashed avocado, poached organic eggs, and micro-greens on sourdough.</p>
-                            <span class="price">$24</span>
+                            <h3>Thalassery Dum Biriyani</h3>
+                            <p>Our authentic, world-famous dum biriyani served with tender meat, rich spices, and fragrant rice.</p>
+                            <span class="price">200</span>
                         </div>
                     </article>
                     <article class="menu-card">
                         <div class="card-image-wrapper">
-                            <img src="assets/breakfast.png" alt="Pancakes" class="card-image">
+                            <img src="assets/parotta.png" alt="Kerala Parotta & Beef Roast" class="card-image">
                         </div>
                         <div class="card-content">
-                            <h3>Truffle Eggs Benedict</h3>
-                            <p>Classic benedict elevated with black truffle shavings and rich hollandaise.</p>
-                            <span class="price">$28</span>
+                            <h3>Kerala Parotta & Beef</h3>
+                            <p>Flaky, multi-layered flatbread paired with our signature spicy, dark-roasted beef.</p>
+                            <span class="price">150</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/chicken65.png" alt="Chicken Fry 65" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Chicken 65</h3>
+                            <p>A classic favorite. Crispy, spicy, and perfectly marinated chicken pieces tossed with fresh curry leaves.</p>
+                            <span class="price">150</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/butter_chicken.png" alt="Butter Chicken" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Butter Chicken</h3>
+                            <p>Tender chicken simmered in a rich, creamy tomato gravy with a hint of smoky flavor.</p>
+                            <span class="price">250</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/mutton_rogan_gosh.png" alt="Mutton Rogan Gosh" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mutton Rogan Gosh</h3>
+                            <p>A luxurious, aromatic Kashmiri curry featuring slow-cooked, succulent pieces of mutton.</p>
+                            <span class="price">200</span>
+                        </div>
+                    </article>
+                    <article class="menu-card">
+                        <div class="card-image-wrapper">
+                            <img src="assets/paneer_chilly.png" alt="Paneer Chilly" class="card-image">
+                        </div>
+                        <div class="card-content">
+                            <h3>Paneer Chilly</h3>
+                            <p>Crispy paneer cubes tossed in a sweet, spicy, and tangy soy-based sauce with fresh peppers.</p>
+                            <span class="price">160</span>
                         </div>
                     </article>
                 </div>
             </div>
 
-            <!-- Dinner Section -->
-            <div class="menu-category reveal" style="margin-top: var(--spacing-xl);">
-                <h3 class="category-title">Dinner</h3>
-                <div class="menu-grid">
-                    <article class="menu-card">
-                        <div class="card-image-wrapper">
-                            <img src="assets/burger.png" alt="Gourmet Burger" class="card-image">
-                        </div>
-                        <div class="card-content">
-                            <h3>The Elysian Burger</h3>
-                            <p>Artisan brioche, premium wagyu beef, aged cheddar, and our signature truffle aioli.</p>
-                            <span class="price">$32</span>
-                        </div>
-                    </article>
-                    <article class="menu-card">
-                        <div class="card-image-wrapper">
-                            <img src="assets/pasta.png" alt="Creamy Truffle Pasta" class="card-image">
-                        </div>
-                        <div class="card-content">
-                            <h3>Wild Mushroom Truffle Pasta</h3>
-                            <p>Hand-crafted fettuccine tossed in a rich, creamy sauce with fresh truffles and parmesan.</p>
-                            <span class="price">$45</span>
-                        </div>
-                    </article>
-                    <article class="menu-card">
-                        <div class="card-image-wrapper">
-                            <img src="assets/sushi.png" alt="Colorful Sushi Platter" class="card-image">
-                        </div>
-                        <div class="card-content">
-                            <h3>Ocean's Bounty Sushi</h3>
-                            <p>A vibrant selection of the freshest sashimi and expertly crafted maki rolls.</p>
-                            <span class="price">$65</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
+            <div class="full-menu-grid">
 
-            <!-- Ice Creams Section -->
-            <div class="menu-category reveal" style="margin-top: var(--spacing-xl);">
-                <h3 class="category-title">Ice Creams & Sweets</h3>
-                <div class="menu-grid">
-                    <article class="menu-card">
-                        <div class="card-image-wrapper">
-                            <img src="assets/dessert.png" alt="Gelato" class="card-image">
-                        </div>
-                        <div class="card-content">
-                            <h3>Gelato Trio Flight</h3>
-                            <p>Pistachio, dark chocolate, and Tahitian vanilla bean authentic gelato.</p>
-                            <span class="price">$16</span>
-                        </div>
-                    </article>
-                    <article class="menu-card">
-                        <div class="card-image-wrapper">
-                            <img src="assets/dessert.png" alt="Midnight Lava Cake" class="card-image">
-                        </div>
-                        <div class="card-content">
-                            <h3>Midnight Lava Cake</h3>
-                            <p>Decadent dark chocolate cake with a molten center, paired with vanilla bean gelato.</p>
-                            <span class="price">$18</span>
-                        </div>
-                    </article>
+                <!-- BEEF SPECIAL -->
+                <div class="menu-category-block reveal">
+                    <h3>Beef Special</h3>
+                    <div class="price-header">
+                        <span>Qtr/Half</span>
+                        <span>Full</span>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Chat Masala</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Lemon Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Pineapple</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Kadai Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Mehti Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Tawa</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Butter Beef</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef UAE</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>140</span><span>180</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Roast</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Daal Beef</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Palak Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Keema</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>70</span><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Stew</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Kurma</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Pepper Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Pepper Fry</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>80</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Taj Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>200</span><span>250</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Kashmiri Kurma</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Malabar Roast</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Chilli</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name" style="color: var(--accent-gold);">Special
+                            Family Pack</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>500</span></div>
+                    </div>
                 </div>
+
+                <!-- CHICKEN SPECIAL -->
+                <div class="menu-category-block reveal">
+                    <h3>Chicken Special</h3>
+                    <div class="price-header">
+                        <span>Qtr/Half</span>
+                        <span>Full</span>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Chat Masala</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Lemon</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Pineapple</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Kadai</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Pudhin</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Masala</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken UAE</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>250</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Fry</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>60</span><span>90</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Roast</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Chilli</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Palak</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Keema</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Stew</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Pepper Chicken</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Taj</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Kashmiri Kurma</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Malabar Roast</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Butter Chicken</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>250</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Loolypop</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>80</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Malai Chicken Kurma</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>180</span><span>280</span></div>
+                    </div>
+                </div>
+
+                <!-- MUTTON SPECIAL -->
+                <div class="menu-category-block reveal">
+                    <h3>Mutton Special</h3>
+                    <div class="price-header">
+                        <span>Half</span>
+                        <span>Full</span>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Chat Masala</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Lemon Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Pineapple</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>180</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Kadai Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Mehti Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Tawa</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Masala</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Roast</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Keema</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Stew</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Kurma</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Pepper Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Taj Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Kashmiri Kurma</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Malabar Roast</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Ghee Roast</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Pudhina Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Beja Fry</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Chops Masala</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Chops Fry</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Paaya Soup</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Moglayi</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Rogan Gosh</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Hundy Mutton</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>150</span><span>200</span></div>
+                    </div>
+                </div>
+
+                <!-- RICE SPECIAL -->
+                <div class="menu-category-block reveal">
+                    <h3>Rice & Biriyani</h3>
+                    <div class="price-header">
+                        <span>Half</span>
+                        <span>Full</span>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Dum Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Dum Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>80</span><span>110</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Dum Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>180</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Kaada Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Puttu Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Puttu Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Puttu Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Egg Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>50</span><span>80</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Biriyani Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>40</span><span>60</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Ghee Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>40</span><span>60</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Boiled Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>40</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Fried Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Fried Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Fried Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Veg Fried Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>70</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mix Fried Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>170</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name"
+                            style="color: var(--accent-gold);">Thalassery Kitchen Fried Rice</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Egg Noodles</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>70</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Noodles</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>80</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Noodles</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>80</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mix Noodles</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>150</span></div>
+                    </div>
+                </div>
+
+                <!-- WHITEBOARD SPECIALS & COMBOS -->
+                <div class="menu-category-block reveal">
+                    <h3>Specials & Combos</h3>
+                    <div class="price-header">
+                        <span>Price</span>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Ayakoora Biriyani</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>200</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Fish Biriyani (Today Special)</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>90</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">2 Pcs Beef Full Rice with Cold</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>140</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">1 Pc Chicken Full Rice with Cold</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Chops Fry</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>160</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Parota + Beef Roast (2 Pcs)</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Parota + Beef Fry (2 Pcs)</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Puttu + Kadla Curry (2 Pcs)</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>50</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Pathri + Chicken/Beef Curry (5 Pcs)</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>90</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Idiyappam + Egg Curry (3 Pcs)</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>60</span></div>
+                    </div>
+                </div>
+
+                <!-- ROTTI & SNACKS -->
+                <div class="menu-category-block reveal">
+                    <h3>Rotti & Snacks</h3>
+                    <div class="price-header">
+                        <span>Price</span>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Kerala Porota</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>10</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Coin Porota</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>7</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Salan Porota</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>25</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Porota</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Porota</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Beef Keema Porota</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Wheat Porota</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>15</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chapati</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>10</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Puttu</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>10</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Nice Patri</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>7</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Idiyappam</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>10</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Appam</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>10</span></div>
+                    </div>
+                </div>
+
+                <!-- SOUP & STARTERS -->
+                <div class="menu-category-block reveal">
+                    <h3>Soups & Starters</h3>
+                    <div class="price-header">
+                        <span>Price</span>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Clear Soup</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Hot & Sour Chicken Soup</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>100</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Paaya Soup</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>150</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Sweet Corn Chicken Soup</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>120</span><span>140</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Pepper Starter</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>300</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Mutton Beja Starter</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Chicken Lollypop</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>170</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Crispy Chicken (Boneless)</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>250</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Veg Manchurian</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>120</span></div>
+                    </div>
+                    <div class="menu-item-row"><span class="menu-item-name">Paneer Chilly</span>
+                        <div class="menu-item-dots"></div>
+                        <div class="menu-item-price"><span>-</span><span>160</span></div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <!-- Interactive Booking Section -->
-        <section id="reservations" class="booking-section reveal">
-            <div class="booking-container">
-                <div class="booking-text">
-                    <h2>Seating Reservations</h2>
-                    <p>Select an available table or scan the QR code to book your spot instantly.</p>
-                    
-                    <div class="seating-chart" id="seatingChart">
-                        <div class="table free" data-id="1">1</div>
-                        <div class="table occupied" data-id="2">2</div>
-                        <div class="table free" data-id="3">3</div>
-                        <div class="table occupied" data-id="4">4</div>
-                        <div class="table free" data-id="5">5</div>
-                        <div class="table free" data-id="6">6</div>
-                        <div class="table occupied" data-id="7">7</div>
-                    </div>
-
-                    <div class="booking-status" id="bookingStatus">
-                        <span class="status-dot free"></span> Available 
-                        <span class="status-dot occupied"></span> Booked
-                    </div>
+        <!-- Google Reviews Section -->
+        <section id="reviews" class="feedback-section reveal">
+            <div class="section-header">
+                <h2>Customer Reviews</h2>
+                <div id="googleRatingContainer" style="font-size: 1.5rem; color: var(--accent-gold); margin-top: 10px; margin-bottom: 5px; letter-spacing: 2px;">
+                    <!-- Live rating will be injected here -->
+                    <span class="loading-spinner" style="display:inline-block; font-size:1rem;">Fetching live rating...</span>
                 </div>
-                <div class="qr-code-wrapper">
-                    <img src="assets/book_qr.png" alt="Book Table QR Code" class="qr-image">
-                    <div class="scanner-line"></div>
-                </div>
+                <p id="googleTotalReviews" style="color: var(--text-secondary);">Read what our guests have to say on Google Maps.</p>
             </div>
-            <div id="bookingToast" class="toast">Table successfully booked!</div>
+            
+            <div class="reviews-grid" id="reviewsGrid">
+                <!-- Live review cards will be injected here -->
+            </div>
+
+            <!-- A hidden map div is required by the Google Places API Service -->
+            <div id="hiddenMap" style="display: none;"></div>
         </section>
+
     </main>
 
     <footer>
@@ -169,9 +681,10 @@
             <div class="contact-box">
                 <h3>Contact Us</h3>
                 <ul class="contact-details">
-                    <li>📍 123 Luxury Avenue, Metropolis, NY 10001</li>
+                    <li>📍 Badria Street, 20-20209-1, Bunder Rd, opposite Badria Masjid, Bamboo Bazar, Bunder,
+                        Mangaluru, Karnataka 575001/li>
                     <li>✉️ dining@elysithalasseryhotel.com</li>
-                    <li>📞 +1 (555) 123-4567</li>
+                    <li>📞 099726 66644</li>
                 </ul>
             </div>
             <div class="brand-section">
@@ -180,10 +693,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 thalassery  Hotel Dining. All rights reserved.</p>
+            <p>&copy; 2026 thalassery Hotel Dining. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2HJ8WF8R3hfBxokgWZmD0efOAJo3dMdo&libraries=places&callback=initGoogleReviews"></script>
 </body>
+
 </html>
