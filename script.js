@@ -271,6 +271,63 @@ document.addEventListener('DOMContentLoaded', () => {
     
     checkRestaurantStatus();
 
+    // Deep Linking logic for Swiggy and Zomato mobile apps with web fallbacks
+    function initAppDeepLinking() {
+        const swiggyWebUrl = "https://www.swiggy.com/menu/216348";
+        const swiggyAppUrl = "swiggy://menu/216348";
+        
+        const zomatoWebUrl = "https://www.zomato.com/mangalore/thalassery-kitchen-1-bunder/order";
+        const zomatoAppUrl = "zomato://restaurant/18785666";
+
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        function tryOpenApp(e, appUrl, webUrl) {
+            if (!isMobile) {
+                // Desktop users just open the standard URL in a new tab
+                return;
+            }
+
+            e.preventDefault();
+            const start = Date.now();
+
+            // Set a fallback timer to redirect to mobile web version if the app is not installed
+            const fallbackTimeout = setTimeout(() => {
+                // If elapsed time is close to timeout, the browser remained in the foreground (app not installed)
+                if (Date.now() - start < 2200) {
+                    window.location.href = webUrl;
+                }
+            }, 1800);
+
+            // Attempt to open the app via custom URI scheme
+            window.location.href = appUrl;
+
+            // Clear the fallback timeout if the app is opened and browser goes to the background
+            const clearFallback = () => {
+                clearTimeout(fallbackTimeout);
+            };
+
+            document.addEventListener('visibilitychange', clearFallback);
+            document.addEventListener('webkitvisibilitychange', clearFallback);
+            window.addEventListener('pagehide', clearFallback);
+        }
+
+        // Attach listener to all Swiggy links
+        document.querySelectorAll('a[href*="swiggy.com"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                tryOpenApp(e, swiggyAppUrl, swiggyWebUrl);
+            });
+        });
+
+        // Attach listener to all Zomato links
+        document.querySelectorAll('a[href*="zomato.com"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                tryOpenApp(e, zomatoAppUrl, zomatoWebUrl);
+            });
+        });
+    }
+
+    initAppDeepLinking();
+
     // Google Places API integration is initialized via callback
 });
 
