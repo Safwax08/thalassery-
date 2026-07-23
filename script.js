@@ -271,11 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     checkRestaurantStatus();
 
-    // Deep Linking logic for Swiggy and Zomato mobile apps with web fallbacks
+    // Deep Linking logic for Zomato mobile app with web fallback
     function initAppDeepLinking() {
-        const swiggyWebUrl = "https://www.swiggy.com/menu/216348";
-        const swiggyAppUrl = "swiggy://menu/216348";
-        
         const zomatoWebUrl = "https://www.zomato.com/mangalore/thalassery-kitchen-1-bunder/order";
         const zomatoAppUrl = "zomato://restaurant/18785666";
 
@@ -310,13 +307,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.addEventListener('webkitvisibilitychange', clearFallback);
             window.addEventListener('pagehide', clearFallback);
         }
-
-        // Attach listener to all Swiggy links
-        document.querySelectorAll('a[href*="swiggy.com"]').forEach(link => {
-            link.addEventListener('click', (e) => {
-                tryOpenApp(e, swiggyAppUrl, swiggyWebUrl);
-            });
-        });
 
         // Attach listener to all Zomato links
         document.querySelectorAll('a[href*="zomato.com"]').forEach(link => {
